@@ -1,6 +1,6 @@
 # Updating Documents
 ## Updating an existing field
-```json
+```
 POST /products/_update/100
 {
   "doc": {
@@ -11,7 +11,7 @@ POST /products/_update/100
 ```
 
 ## Adding a new field
-```json
+```
 POST /products/_update/100
 {
   "doc": {
@@ -19,6 +19,7 @@ POST /products/_update/100
     "qty": 5
   }
 }
+```
 
 ### How does the update API Work
 - It updates a doc even though elastic documents are immutable.
@@ -29,7 +30,7 @@ POST /products/_update/100
 
 # Scripted updates
 ## Reducing the current value of 'qty' by one
-```json
+```
 POST /products/_update/100
 {
   "script": {
@@ -39,7 +40,7 @@ POST /products/_update/100
 ```
 
 ## Assigning an arbitrary value to `qty`
-```json
+```
 POST /products/_update/100
 {
   "script": {
@@ -49,7 +50,7 @@ POST /products/_update/100
 ```
 
 ## Using parameters within scripts
-```json
+```
 POST /products/_update/100
 {
   "script": {
@@ -62,7 +63,7 @@ POST /products/_update/100
 ```
 
 ## Conditionally setting the operation to `noop`
-```json
+```
 POST /products/_update/100
 {
   "script": {
@@ -78,7 +79,7 @@ POST /products/_update/100
 ```
 
 ## Conditionally update a field value
-```json
+```
 POST /products/_update/100
 {
   "script": {
@@ -96,7 +97,7 @@ POST /products/_update/100
 - However, in the first query, we set the operation to 'no operation (no-op)'. This means that the 'result' key in the object that we get after using the update command, will not have the word "updated". However, if we use the second approach, we would still have the word, 'updated' even though we didn't update the field.
 
 ## Conditionally delete a document
-```json
+```
 POST /products/_update/100
 {
   "script": {
