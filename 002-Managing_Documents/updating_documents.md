@@ -113,3 +113,35 @@ POST /products/_update/100
 ```
 - The command above deletes the document if the condition is satisfied.
 - Usually used when  you no longer need the data after reaches a certain point.
+
+# Upserts
+A conditional way of inserting documents. Script is run if the doc exists, otherwise 'upsert' is run.
+```
+POST /products/_update/101
+{
+  "script": {
+    "source": "ctx._source.qty++"
+  },
+  "upsert": {
+    "name": "Blender",
+    "price": 399,
+    "in_stock": 5
+  }
+}
+```
+
+# Replacing Documents
+```
+PUT /products/_doc/100
+{
+    "name": "Toaster",
+    "price": 75,
+    "in_stock": true,
+    "qty": 5
+}
+```
+
+# Deleting a Document
+```
+DELETE /products/_doc/101
+```
