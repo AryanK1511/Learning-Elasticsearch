@@ -1,7 +1,7 @@
 # Indexing and Retrieving Documents
 
 ## Indexing document with auto generated ID
-```json
+```
 POST /products/_doc
 {
   "name": "Another Product",
@@ -11,7 +11,7 @@ POST /products/_doc
 ```
 
 ## Indexing document with custom ID
-```json
+```
 PUT /products/_doc/100
 {
   "name": "Another Product",
@@ -28,12 +28,12 @@ PUT /products/_doc/100
 > Note: While this behavior is convenient in development mode, it's best practice to explicitly create indices.
 
 ## Retrieving Documents
-```json
+```
 GET /products/_doc/100
 ```
 > You can use the command above to retrieve using ID.
 
-```json
+```
 GET products/search 
 {
   "query": {

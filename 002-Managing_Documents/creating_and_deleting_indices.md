@@ -2,7 +2,7 @@
 
 ### Creating an Index with Custom Settings
 
-```json
+```
 PUT /products
 {
   "settings": {
@@ -13,6 +13,6 @@ PUT /products
 ```
 
 ### Deleting an Index
-```json
+```
 DELETE /pages
 ```
